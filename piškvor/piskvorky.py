@@ -1,7 +1,5 @@
-from util import tah, delka_pole
+from util import tah, DELKA_POLE
 from ai import tah_pocitace
-
-
 
 def vyhodnot(pole):
     if "xxx" in pole:
@@ -22,7 +20,7 @@ def vyhodnot(pole):
     pass
 
 
-def tah_hrace(pole):
+def tah_hrace(pole, symbol = "x"):
     while True:
         cislo_policka = int(input("Na které pole chceš táhnout? "))
         if cislo_policka >= 0 and cislo_policka < DELKA_POLE and pole[cislo_policka] == "-":
@@ -34,3 +32,33 @@ def tah_hrace(pole):
     tahem.
     """
     pass
+
+def piskvorky1d():
+    DELKA_POLE = 10
+    if DELKA_POLE < 5:
+        raise ValueError('Číslo hracího pole musí být větší nebo rovno 5')
+
+
+    pole = DELKA_POLE * "-"
+    while True:
+        print(pole)
+        pole = tah_hrace(pole, "x")
+        print(pole)
+        if vyhodnot(pole) !="-":
+            break
+        pole = tah_pocitace(pole, "o")
+        if vyhodnot(pole) !="-":
+            break
+
+        pass
+    """
+    Hraje 1D piškvorky.
+    """
+    pass
+
+    if vyhodnot(pole) == "x":
+        print("Vyhrál člověk")
+    elif vyhodnot(pole) == "o":
+        print("Vyhrál počítač")
+    elif vyhodnot(pole) == "!":
+        print("Remíza")

@@ -1,11 +1,6 @@
-def delka_pole():
-    '''Vrátí délku hracího pole a ověří zda je délka správná'''
-
-    DELKA_POLE = 25
-    if DELKA_POLE < 5:
-        raise ValueError('Číslo hracího pole musí být větší nebo rovno 5')
-
-    return DELKA_POLE
+DELKA_POLE = 10
+if DELKA_POLE < 5:
+    raise ValueError('Číslo hracího pole musí být větší nebo rovno 5')
 
 
 def tah(pole, cislo_policka, symbol):
