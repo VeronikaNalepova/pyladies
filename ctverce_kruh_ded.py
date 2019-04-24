@@ -3,7 +3,7 @@ from math import pi
 class Geo_utvary():
 
     def rozdil_obsahu(self, druhy_utvar):
-        print(self.obsah() - druhy_utvar.obsah())
+        return self.obsah() - druhy_utvar.obsah()
 
 class Ctverec(Geo_utvary):
     def __init__(self, strana):
